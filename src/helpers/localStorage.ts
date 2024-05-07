@@ -2,7 +2,7 @@ export function getFromLS(key) {
   let ls = {};
   if (global.localStorage) {
     try {
-      ls = JSON.parse(global.localStorage.getItem("met-viewed-artworks")) || {};
+      ls = JSON.parse(global.localStorage.getItem("met-artworks")) || {};
     } catch (e) {
       /*Ignore*/
     }
@@ -15,7 +15,7 @@ export function saveToLS(key, value) {
 
   if (global.localStorage) {
     global.localStorage.setItem(
-      "met-viewed-artworks",
+      "met-artworks",
       JSON.stringify({
         [key]: value,
       })
